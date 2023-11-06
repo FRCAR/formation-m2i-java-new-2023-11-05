@@ -1,11 +1,15 @@
 package com.bigcorp.project.main.lambda;
 
+import java.util.function.Consumer;
+
 /**
  * Une fenêtre : utilise des lambdas
  */
 public class Window {
 
 	private Pushable button;
+	
+	private Consumer<String> stringConsumer;
 	
 	public void click(int force) {
 		String result = button.push(force);
@@ -49,6 +53,13 @@ public class Window {
 		window.setButton(
 				(int force) -> {return "Bouton cliqué via une lambda avec la force : " + force;});
 		
+		window.setStringConsumer(System.out::println);
+		window.setStringConsumer(s -> System.out.println(s));
+		
+	}
+
+	public void setStringConsumer(Consumer<String> stringConsumer) {
+		this.stringConsumer = stringConsumer;
 	}
 
 }
