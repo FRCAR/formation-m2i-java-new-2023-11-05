@@ -11,7 +11,7 @@ public class CreateSemaphore {
 	public static void main(String[] args) {
 
 		System.out.println("Démarrage Thread principal");
-		Semaphore semaphore = new Semaphore(1, true);
+		Semaphore semaphore = new Semaphore(2, true);
 		LongResource longResource = new LongResource();
 		new Thread(new LongTaskRunnable(semaphore, longResource)).start();
 		new Thread(new LongTaskRunnable(semaphore, longResource)).start();

@@ -14,11 +14,14 @@ public class CreateNewExecutor {
 		System.out.println("Démarrage Thread principal");
 		// Ci-dessous, ne démarre pas un Thread
 		Runnable runnable = new LongTaskRunnable();
+		
 		ExecutorService executorService = Executors.newFixedThreadPool(3);
+		
 		executorService.execute(runnable);
 		executorService.execute(runnable);
 		executorService.execute(runnable);
 		executorService.execute(runnable);
+		
 		executorService.shutdown();
 
 		System.out.println("Fin Thread principal");
