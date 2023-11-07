@@ -19,6 +19,12 @@
 			<version>${project.version}</version>
 		</dependency>
 
+		<dependency>
+			<groupId>com.bigcorp.project</groupId>
+			<artifactId>business</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+
 	</dependencies>
 
 

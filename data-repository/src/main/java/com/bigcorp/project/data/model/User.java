@@ -7,7 +7,7 @@ public class User {
 
 	private Long id;
 	private String firstName;
-	private String lastName;
+	private  String lastName;
 
 	public Long getId() {
 		return id;
@@ -31,6 +31,10 @@ public class User {
 
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
+	}
+	
+	private void methodePrivee(String param) {
+		this.firstName = param;
 	}
 
 }

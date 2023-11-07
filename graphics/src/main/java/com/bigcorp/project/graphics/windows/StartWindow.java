@@ -1,5 +1,9 @@
 package com.bigcorp.project.graphics.windows;
 
+import java.lang.reflect.Method;
+import java.util.ServiceLoader;
+
+import com.bigcorp.project.data.contract.AddressService;
 import com.bigcorp.project.data.model.User;
 import com.bigcorp.project.data.repository.UserRepositoryImpl;
 
@@ -17,14 +21,22 @@ public class StartWindow {
 		return currentlyLoggedUser;
 	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception{
 		StartWindow startWindow = new StartWindow();
 		startWindow.displayHelloMessage();
 		
-//		AddressService addressService = ServiceLoader
-//				.load(AddressService.class)
-//				.findFirst()
-//				.orElseThrow();
+		User user = new User();
+		Method methodePrivee = User.class.getDeclaredMethod("methodePrivee", String.class);
+		methodePrivee.setAccessible(true);
+		methodePrivee.invoke(user, "coucou");
+		System.out.println(user.getFirstName());
+		
+		AddressService addressService = ServiceLoader
+				.load(AddressService.class)
+				.findFirst()
+				.orElseThrow();
+		
+		System.out.println(addressService.getPostCode("45 rue des dahlias"));
 	}
 
 }

@@ -33,7 +33,8 @@ public class ChildStream {
 		System.out.println(ageMoyen);
 		
 		//Les deux lignes ci-dessus équivalent à :
-		enfants.stream().filter(c -> c.getAge()>12 ).mapToInt(Child::getAge).average().ifPresent(System.out::println);
+		enfants.stream().filter(c -> c.getAge()>12 ).mapToInt(Child::getAge).average()
+			.ifPresent(System.out::println);
 
 		//Afficher si au moins un enfant a dépassé un âge.
 		int minAge = 7;
@@ -44,7 +45,8 @@ public class ChildStream {
 
 		//Utiliser les streams pour afficher le nom de l’enfant ayant le plus grand âge.
 		System.out.println("\r\nEnfant ayant le plus grand age");
-		Child enfantLePlusVieux = enfants.stream().max((c1,c2) -> c1.getAge() - c2.getAge()).orElse(null);
+		Child enfantLePlusVieux = enfants.stream().max((c1,c2) -> c1.getAge() - c2.getAge())
+				.orElse(null);
 		System.out.println(enfantLePlusVieux.getNom() + " a " + enfantLePlusVieux.getAge() + " ans");
 		
 		//Pareil pour le plus petit age. 
