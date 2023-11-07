@@ -33,7 +33,7 @@ public class ChildStream {
 		System.out.println(ageMoyen);
 		
 		//Les deux lignes ci-dessus équivalent à :
-		enfants.stream().mapToInt(Child::getAge).average().ifPresent(System.out::println);
+		enfants.stream().filter(c -> c.getAge()>12 ).mapToInt(Child::getAge).average().ifPresent(System.out::println);
 
 		//Afficher si au moins un enfant a dépassé un âge.
 		int minAge = 7;
