@@ -1,5 +1,5 @@
 package com.bigcorp.project.main.sealedd;
 
-public final class Planete extends Celeste {
+public sealed class Planete extends Celeste permits PlaneteGazeuse, PlaneteTellurique{
 
 }

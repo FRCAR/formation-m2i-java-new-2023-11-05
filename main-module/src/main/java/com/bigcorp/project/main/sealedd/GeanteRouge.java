@@ -1,5 +1,5 @@
 package com.bigcorp.project.main.sealedd;
 
-public final class GeanteRouge extends Etoile {
+public non-sealed class GeanteRouge extends Etoile {
 
 }
