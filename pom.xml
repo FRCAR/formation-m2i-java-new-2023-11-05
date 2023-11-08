@@ -14,6 +14,7 @@
 		<module>business</module>
 		<module>data-repository</module>
 		<module>data-contract</module>
+		<module>graphics2</module>
 	</modules>
 
 	<properties>
